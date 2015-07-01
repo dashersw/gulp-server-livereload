@@ -280,7 +280,7 @@ module.exports = function(options) {
     }));
 
     if (config.livereload.enable) {
-      watch(file.path, function(filename) {
+      watch(config.livereload.path || file.path, function(filename) {
         config.livereload.filter(filename, function(shouldReload) {
           if (shouldReload) {
             gutil.log('Livereload: file changed: ' + filename);
